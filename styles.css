@@ -1,0 +1,356 @@
+/* ------------------------------- 1. Imports -------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&family=Roboto:wght@400;700&display=swap');
+
+/* ------------------------------- 2. Global Styles -------------------------------- */
+
+:root {
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink: #ED4385;
+    --black: #0C0C0C;
+    --purple-light: #F2F0FF;
+    --gray-light: #F3F6F9;
+    --gray: #7A7A7A;
+    --white: #FFFFFF;
+    --font-sans-serif: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-monospace: 'Merriweather', serif, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-weight:400;
+    --body-font-size: 1rem;
+    --box-shadow: 0 1.5rem 1.5rem rgba(0,0,0,0.2);
+    --box-shadow-sm: 0 .5rem .5rem rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------- 3. Typography ----------------------------------- */
+
+/* --------------- 3.1 Headings ------------------- */
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-monospace);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1, .h1 {
+    font-size: calc(var(--body-font-size) * 2.25);
+}
+
+h2, .h2 {
+    font-size: calc(var(--body-font-size) * 2);
+}
+
+h3, .h3 {
+    font-size: calc(var(--body-font-size) * 1.75);
+}
+
+h4, .h4 {
+    font-size: calc(var(--body-font-size) * 1.5);
+}
+
+h5, .h5 {
+    font-size: calc(var(--body-font-size) * 1.25);
+}
+
+h6, .h6 {
+    font-size: var(--body-font-size);
+}
+
+/* --------------- 3.2 Body ------------------- */
+
+body {
+    font-size: var(--body-font-size);
+    font-family: var(--font-sans-serif);
+    font-weight: var(--font-weight);
+    color: var(--black);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: calc(var(--body-font-size) * 1.25);
+}
+
+/* ------------------------------- 4. Navigation ----------------------------------- */
+
+/* --------------- 4.1 Links ------------------- */
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--purple);
+    transition: color .2s ease-in-out;
+}
+a:hover{
+    color:var(--pink);
+}
+a:visited{
+    color: var(--purple);
+}
+
+/* --------------- 4.2 Buttons ------------------- */
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    border: none;
+    color: var(--white);
+    font-weight: 400;
+    text-decoration: none;
+    font-size: calc(var(--body-font-size) * 0.8);
+    letter-spacing: 1px;
+    padding: .75rem 2.5rem;
+    border-radius: 2rem;
+    background-color: transparent;
+    transition: background-color .2s ease-in-out;
+}
+.btn:hover, .btn:visited{
+    color:var(--white);
+}
+
+.btn-pink {
+    background-color: var(--pink);
+}
+.btn-pink:hover {
+    background-color: var(--black);
+}
+
+.btn-shadow {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------- 4.3 Navbar ------------------- */
+
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    padding:1rem;
+}
+
+#navbar a{
+    color:var(--white);
+    padding: 1rem;
+}
+
+#navbar a:hover{
+    color:var(--black);
+}
+
+
+@media (min-width: 768px){
+    #navbar {
+        justify-content: flex-end;
+    }
+}
+
+/* ------------------------------- 5. Forms --------------------------------------- */
+
+.field-group{
+    margin-bottom: 2rem;
+}
+.field-group label{
+    display: block;
+    text-align: left;
+    font-size: calc(var(--body-font-size) * .8);
+    font-weight: 700;
+}
+.field{
+    width: 100%;
+    padding:1rem;
+    border-radius: 2px;
+    border: none;
+}
+
+.field::placeholder {
+    font-size: calc(var(--body-font-size) * .8);
+    font-family: var(--font-sans-serif);
+}
+
+/* ------------------------------- 6. Layout --------------------------------------- */
+
+.content-container {
+    max-width: 800px;
+    text-align: center;
+    margin:0 auto;
+}
+
+.section {
+    padding: 6rem 2rem;
+}
+
+/* ------------------------------- 7. Areas ---------------------------------------- */
+
+/* --------------- 7.1 Header ------------------- */
+
+#masthead {
+    background-color: var(--blue);
+    color: var(--white);
+    position: relative;
+}
+#masthead .content{
+    padding:6rem 3rem;
+}
+#masthead .squiggle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+#masthead .squiggle svg{
+    margin: 1rem;
+}
+
+#masthead .squiggle:after{
+    content: '';
+    width:1px;
+    height:60px;
+    background-color: var(--white);
+    display: block;
+}
+#masthead .squiggle svg path{
+    fill: var(--white);
+}
+
+/* --------------- 7.2 Section One ------------------- */
+
+.section-one{
+    background-color: var(--white);
+}
+.section-one .content{
+    color:var(--purple);
+}
+.section-one .content p{
+    margin-bottom: 2rem;
+}
+
+.section-one .contact-us{
+    margin-top: 6rem;
+}
+
+/* --------------- 7.3 Section Two ------------------- */
+.section-two{
+    background-color: var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.project-content{
+    max-width: 300px;
+    margin:2rem;
+}
+.project-description{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-image{
+    max-width: 600px;
+}
+
+.project-image img{
+    box-shadow: var(--box-shadow-sm);
+}
+
+.project-link{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: calc(var(--body-font-size) * 0.8);
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px){
+
+    .project{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+    }
+    .project-image img{
+        box-shadow: var(--box-shadow);
+    }
+
+    .project:nth-child(even) .project-image{
+        order:2;
+    }
+    .project:nth-child(even) .project-content{
+        order:1;
+    }
+}
+
+/* --------------- 7.4 Section Three ------------------- */
+.section-three .cards{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.section-three .card{
+    flex: 1 1 300px;
+    border:1px solid var(--purple);
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-sm);
+}
+.section-three .card figure {
+    margin-bottom: 1rem;
+}
+.section-three .card figure svg{
+    max-height: 48px;
+}
+.section-three .card h2 {
+    color: var(--purple);
+}
+.section-three .card p{
+    color: var(--gray);
+    font-size: calc(var(--body-font-size) * 0.8);
+}
+
+/* --------------- 7.5 Section Four ------------------- */
+.section-four{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* --------------- 7.6 Footer ------------------- */
+footer{
+    padding:1rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+}
+footer p{
+    margin-bottom: 0;
+}
+
+/* --------------- 7.7 404 ------------------- */
+.error-page{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding:2rem;
+    text-align: center;
+}
+.error-content{
+    max-width: 600px;
+    margin: 0 auto;
+}
