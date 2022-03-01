@@ -168,6 +168,7 @@ a:visited{
     font-weight: 700;
 }
 .field{
+    background-color: var(--white);
     width: 100%;
     padding:1rem;
     border-radius: 2px;
@@ -185,6 +186,7 @@ a:visited{
     max-width: 800px;
     text-align: center;
     margin:0 auto;
+    position: relative;
 }
 
 .section {
@@ -238,6 +240,23 @@ a:visited{
     color: var(--white);
     position: relative;
 }
+#masthead:before{
+    content:'';
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    background-image: url("assets/noise-texture.png");
+    z-index: 1;
+}
+#masthead:after,
+#masthead #navbar,
+#masthead .content-container,
+#masthead .squiggle{
+    z-index: 2;
+}
 #masthead .content{
     padding:6rem 3rem;
 }
@@ -245,7 +264,6 @@ a:visited{
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 #masthead .squiggle:after{
@@ -381,6 +399,24 @@ a:visited{
 .section-four{
     background: var(--gradient-bg);
     color: var(--white);
+    position: relative;
+}
+
+
+.section-four:after{
+    content:'';
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    background-image: url("assets/noise-texture.png");
+    z-index: 1;
+}
+.section-four:before,
+.section-four .content-container{
+    z-index: 2;
 }
 
 /* --------------- 7.6 Footer ------------------- */
