@@ -308,6 +308,23 @@ a:visited{
     font-weight: 700;
     font-size: calc(var(--body-font-size) * 0.8);
     letter-spacing: 1px;
+    position: relative;
+}
+
+.project-link:after{
+    content:'';
+    display: inline-block;
+    height: 1px;
+    width: 10px;
+    position: absolute;
+    top:50%;
+    left: calc(100% + 10px);
+    background-color: var(--purple);
+    transition: width .2s ease-in-out;
+}
+
+.project-link:hover:after{
+    width: 50px;
 }
 
 @media (min-width: 768px){
